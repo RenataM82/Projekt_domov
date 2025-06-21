@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Vysněný domov</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Vysněný domov - aneb kdy se koupí dům, rozjede se projekt století.{% endif %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <a href="/" class="header__logo" aria-label="Vysněný domov - úvodní stránka">
+                <img src="/images/Logo.svg" alt="Logo Vysněný domov" class="header__logo-img" width="80" height="80">
+                <span class="header__logo-text">Vysněný domov</span>
+            </a>
+            
+            <!-- Hamburger button pro mobil -->
+            <button class="header__menu-toggle" aria-label="Otevřít menu" type="button">
+                <span class="header__menu-toggle-line"></span>
+                <span class="header__menu-toggle-line"></span>
+                <span class="header__menu-toggle-line"></span>
+            </button>
+            
+            <nav class="header__nav">
+                <ul class="nav">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}">Homepage</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/nas-pribeh/" class="nav__link{% if page.url == '/nas-pribeh/' %} nav__link--active{% endif %}">Náš příběh</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/projekty/" class="nav__link{% if page.url == '/projekty/' %} nav__link--active{% endif %}">Projekty</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/blog/" class="nav__link{% if page.url == '/blog/' %} nav__link--active{% endif %}">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/kontakty/" class="nav__link{% if page.url == '/kontakty/' %} nav__link--active{% endif %}">Kontakty</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        {{ content | safe }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__copyright">© 2025 Vysněný domov</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.header__menu-toggle');
+            const nav = document.querySelector('.header__nav');
+            
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function() {
+                    nav.classList.toggle('header__nav--open');
+                    menuToggle.classList.toggle('header__menu-toggle--active');
+                    
+                    // Update aria-label
+                    const isOpen = nav.classList.contains('header__nav--open');
+                    menuToggle.setAttribute('aria-label', isOpen ? 'Zavřít menu' : 'Otevřít menu');
+                });
+                
+                // Zavření menu při kliknutí na odkaz
+                const navLinks = nav.querySelectorAll('.nav__link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        nav.classList.remove('header__nav--open');
+                        menuToggle.classList.remove('header__menu-toggle--active');
+                        menuToggle.setAttribute('aria-label', 'Otevřít menu');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

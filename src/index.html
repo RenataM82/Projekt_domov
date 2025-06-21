@@ -1,0 +1,165 @@
+---
+layout: base.njk
+title: Homepage
+description: Vysněný domov - aneb kdy se koupí dům, rozjede se projekt století.
+---
+
+<style>
+/* Homepage oprava zarovnání - pouze úvodní text doleva */
+.intro__container,
+.intro__title,
+.intro__text {
+  text-align: left !important;
+}
+
+.intro__text {
+  margin: 0 !important;
+  max-width: 100%; /* Změna na celou šířku */
+  text-align: justify !important; /* Zarovnání na celou šířku */
+}
+
+/* Hero sekce s background obrázkem */
+.hero {
+  background-image: url('images/dum.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+
+/* Průhledný overlay pro lepší čitelnost textu - méně průhledný */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(248, 248, 248, 0.65); /* Sníženo z 0.85 na 0.65 pro viditelnější obrázek */
+  z-index: 1;
+}
+
+/* Zajistí, že obsah je nad overlay */
+.hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Větší titulek */
+.hero__title {
+  font-size: 4.5rem !important; /* Zvětšeno z 3.5rem */
+}
+
+/* Větší podtitulek */
+.hero__subtitle {
+  font-size: 1.6rem !important; /* Zvětšeno z 1.3rem */
+}
+
+/* Větší logo */
+.hero__icon {
+  width: 450px !important; /* Zvětšeno z 350px */
+  max-width: 450px !important;
+}
+</style>
+
+<!-- Hero sekce -->
+<section class="hero">
+    <div class="hero__container">
+        <div class="hero__content">
+            <h1 class="hero__title">Vysněný domov</h1>
+            <p class="hero__subtitle">...aneb kdy se koupí dům,<br>rozjede se projekt století.</p>
+        </div>
+        <div class="hero__image">
+            <img src="images/Logo.svg" alt="Logo s domečkem a srdcem" class="hero__icon" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Úvodní text -->
+<section class="intro">
+    <div class="intro__container">
+        <h2 class="intro__title">Vítejte u nás doma!</h2>
+        <p class="intro__text">
+            Objevte s námi cestu za vytvořením vysněného domova, který bude nejen krásný, 
+            ale i praktický. Sdílíme zkušenosti, plány a chytrá řešení, která pomáhají 
+            proměnit dům ve vysněné místo k životu.
+        </p>
+    </div>
+</section>
+
+<!-- Příklady projektů -->
+<section class="projects-preview">
+    <div class="projects-preview__container">
+        <h2 class="projects-preview__title">Příklady projektů</h2>
+        
+        <div class="projects-grid">
+            <a href="/projekty/zahrada-a-sad/" class="project-card">
+                <div class="project-card__image">
+                    <img src="images/HP_zahrada a sad.png" alt="Zahrada s cestičkou a zelení" class="project-card__img" loading="lazy">
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Zahrada a sad</h3>
+                    <p class="project-card__text">Jak na zahradu, která bude krásná i užitková.</p>
+                </div>
+            </a>
+
+            <a href="/projekty/" class="project-card">
+                <div class="project-card__image">
+                    <img src="images/HP_pracovna.png" alt="Pracovna s fotkami na zdi a židlí" class="project-card__img" loading="lazy">
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Pracovna s fotoateliérem</h3>
+                    <p class="project-card__text">Další sen, který si můžu splnit.</p>
+                </div>
+            </a>
+
+            <a href="/projekty/" class="project-card">
+                <div class="project-card__image">
+                    <img src="images/HP_chytra domacnost.png" alt="Ikona chytré domácnosti" class="project-card__img" loading="lazy">
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">Chytrá domácnost</h3>
+                    <p class="project-card__text">Nestačili jsme se divit, co všechno je dnes možné.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Náš příběh -->
+<section class="story-preview">
+    <div class="story-preview__container">
+        <div class="story-preview__content">
+            <h2 class="story-preview__title">Náš příběh</h2>
+            <p class="story-preview__text">
+                Když řeknu, že jsme neplánovali koupit dům a odstěhovat se "na 
+                samotu", tak se bojíte divit stejně, jako se divili přátelé, kterým jsme 
+                se s touto novinkou pochlubili.
+            </p>
+            <a href="/nas-pribeh/" class="story-preview__link">Chci vědět více</a>
+        </div>
+        <div class="story-preview__image">
+            <img src="images/HP_pribeh.png" alt="Dům s krásnou zahradou" class="story-preview__img" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Čas letí jako voda -->
+<section class="blog-preview blog-preview--with-background">
+    <div class="blog-preview__container">
+        <div class="blog-preview__image">
+            <img src="images/HP_kava a notes.png" alt="Šálek kávy s blokem na poznámky" class="blog-preview__img" loading="lazy">
+        </div>
+        <div class="blog-preview__content">
+            <h2 class="blog-preview__title">Čas letí jako voda...</h2>
+            <p class="blog-preview__text">
+                ... a tak si zde uložíme to, co nechceme zapomenout a do 
+                projektů se nehode hodit.
+            </p>
+            <p class="blog-preview__text">
+                Třeba i vás najdete zajímavé téma, případní i inspiraci.
+            </p>
+            <a href="/blog/" class="blog-preview__link">Více v blogu</a>
+        </div>
+    </div>
+</section>

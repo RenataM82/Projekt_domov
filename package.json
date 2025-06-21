@@ -1,0 +1,16 @@
+{
+  "name": "projekt_domov",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "Renata Macurová",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1"
+  }
+}

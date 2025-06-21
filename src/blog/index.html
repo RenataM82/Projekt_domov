@@ -1,0 +1,251 @@
+---
+layout: base.njk
+title: Blog
+---
+
+<style>
+/* Blog Styles */
+.blog-content {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.blog-content__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Úvodní sekce */
+.blog-intro {
+  text-align: left; /* Změna z center na left */
+  margin-bottom: 60px;
+  max-width: 600px; /* Omezení šířky pro lepší čitelnost */
+}
+
+.blog-intro__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2C5F41;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.blog-intro__text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  /* Odebrány margin-left a margin-right auto */
+}
+
+.blog-intro__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Seznam článků */
+.blog-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Blog karty */
+.blog-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card__content {
+  display: flex;
+  align-items: stretch;
+  min-height: 220px;
+}
+
+.blog-card__text {
+  flex: 1;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2C5F41;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.blog-card__excerpt {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.blog-card__link {
+  color: #2C5F41;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.blog-card__link:hover {
+  text-decoration: underline;
+}
+
+.blog-card__image {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.blog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responzivní úpravy pro Blog */
+@media (max-width: 767px) {
+  .blog-content {
+    padding: 40px 0;
+  }
+  
+  .blog-intro {
+    margin-bottom: 40px;
+  }
+  
+  .blog-intro__title {
+    font-size: 1.7rem;
+  }
+  
+  .blog-intro__text {
+    font-size: 1rem;
+  }
+  
+  .blog-articles {
+    gap: 25px;
+  }
+  
+  .blog-card__content {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .blog-card__text {
+    order: 1;
+    padding: 25px;
+  }
+  
+  .blog-card__image {
+    order: 2;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .blog-card__title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .blog-card__excerpt {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+<!-- Hero sekce s obrázkem - BEZ textu -->
+<section class="story-hero">
+    <div class="story-hero__image">
+        <img src="/images/Header_blog.png" alt="Blog - psaní do notesu s kávou" class="story-hero__img">
+    </div>
+</section>
+
+<!-- Blog obsah -->
+<section class="blog-content">
+    <div class="blog-content__container">
+        
+        <!-- Úvodní sekce -->
+        <div class="blog-intro">
+            <h2 class="blog-intro__title">Čas letí jako voda...</h2>
+            <p class="blog-intro__text">
+                ... a tak si zde uložíme to, co nechceme zapomenout a do projektů se 
+                nehude hodit.
+            </p>
+            <p class="blog-intro__text">
+                Třeba i zde najdete zajímavé téma, případně i inspiraci.
+            </p>
+        </div>
+
+        <!-- Seznam článků -->
+        <div class="blog-articles">
+            
+            <!-- Článek 1 -->
+            <article class="blog-card">
+                <div class="blog-card__content">
+                    <div class="blog-card__text">
+                        <h3 class="blog-card__title">Vyřizování hypotéky</h3>
+                        <p class="blog-card__excerpt">
+                            Člověk by nevěřil, že v dnešní elektronické době, kdy je vše 
+                            propojené se vším, bude vyřizování takové trápení.
+                        </p>
+                        <a href="/blog/vyrizovani-hypoteky/" class="blog-card__link">Pokračování...</a>
+                    </div>
+                    <div class="blog-card__image">
+                        <img src="/images/Blog_hypoteka.png" alt="Vyřizování hypotéky" class="blog-card__img">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Článek 2 -->
+            <article class="blog-card">
+                <div class="blog-card__content">
+                    <div class="blog-card__text">
+                        <h3 class="blog-card__title">Další článek</h3>
+                        <p class="blog-card__excerpt">
+                            Tady by byl další článek. Tady by byl další článek. Tady by byl další 
+                            článek. Tady by byl další článek. Tady by byl další článek.
+                        </p>
+                        <a href="/blog/dalsi-clanek/" class="blog-card__link">Pokračování...</a>
+                    </div>
+                    <div class="blog-card__image">
+                        <img src="/images/Dalekohled.png" alt="Další článek" class="blog-card__img">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Článek 3 -->
+            <article class="blog-card">
+                <div class="blog-card__content">
+                    <div class="blog-card__text">
+                        <h3 class="blog-card__title">Další článek</h3>
+                        <p class="blog-card__excerpt">
+                            Tady by byl další článek. Tady by byl další článek. Tady by byl další 
+                            článek. Tady by byl další článek. Tady by byl další článek.
+                        </p>
+                        <a href="/blog/dalsi-clanek-3/" class="blog-card__link">Pokračování...</a>
+                    </div>
+                    <div class="blog-card__image">
+                        <img src="/images/dum.png" alt="Další článek" class="blog-card__img">
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        
+    </div>
+</section>
