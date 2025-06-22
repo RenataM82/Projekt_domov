@@ -1,0 +1,185 @@
+---
+layout: base.njk
+title: Stránka v přípravě
+description: Tato stránka je momentálně ve výstavbě. Děkujeme za trpělivost.
+---
+
+<style>
+/* Hero sekce – shodná s homepage */
+.hero {
+  background-image: url('images/dum.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(248, 248, 248, 0.65);
+  z-index: 1;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Oprava písma pro konzistenci */
+.hero__title {
+  font-family: var(--font-heading) !important; /* Playfair Display */
+  font-size: 4.5rem !important;
+  color: var(--color-primary) !important; /* #2C5F41 */
+}
+
+.hero__subtitle {
+  font-family: var(--font-body) !important; /* Lora */
+  font-size: 1.6rem !important;
+  color: var(--color-text) !important; /* #333333 */
+}
+
+/* Sekce stránka v přípravě - stejný styl jako intro na ostatních stránkách */
+.page-under-construction {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.page-under-construction__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  text-align: center;
+}
+
+.page-under-construction__title {
+  font-family: var(--font-heading); /* Playfair Display */
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-primary); /* #2C5F41 */
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.page-under-construction__text {
+  font-family: var(--font-body); /* Lora */
+  font-size: 1.1rem;
+  color: var(--color-text-light); /* #666666 */
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-under-construction__image {
+  margin-bottom: 40px;
+}
+
+.page-under-construction__img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.page-under-construction__links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-under-construction__link {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease;
+}
+
+.page-under-construction__link:hover {
+  background-color: #1e4430;
+}
+
+/* Responzivní úpravy */
+@media (max-width: 479px) {
+  .hero__title {
+    font-size: 3.5rem !important;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .page-under-construction {
+    padding: 40px 0;
+  }
+  
+  .page-under-construction__title {
+    font-size: 1.8rem;
+  }
+  
+  .page-under-construction__text {
+    font-size: 1rem;
+  }
+  
+  .page-under-construction__links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero__title {
+    font-size: 4rem !important;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+<!-- Hero sekce -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <h1 class="hero__title">Vysněný domov</h1>
+      <p class="hero__subtitle">...aneb když se koupí dům,<br>rozjede se projekt století.</p>
+    </div>
+    <div class="hero__image">
+      <img src="/images/Logo.svg" alt="Logo s domečkem a srdcem" class="hero__icon" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Stránka v přípravě -->
+<section class="page-under-construction">
+  <div class="page-under-construction__container">
+    <h2 class="page-under-construction__title">Stránka v přípravě</h2>
+    
+    <p class="page-under-construction__text">
+      Děkujeme za trpělivost... Usilovně pracujeme na tom, aby byla co nejdříve hotová.
+      Mezitím si můžete prohlédnout naše dokončené projekty nebo nás sledovat na sociálních sítích.
+    </p>
+    
+    <div class="page-under-construction__image">
+      <img src="/images/stranka-v-priprave.jpg" alt="Stránka ve výstavbě" class="page-under-construction__img" loading="lazy">
+    </div>
+    
+    <div class="page-under-construction__links">
+      <a href="/projekty/" class="page-under-construction__link">Prohlédnout projekty</a>
+      <a href="/blog/" class="page-under-construction__link">Číst blog</a>
+      <a href="/kontakty/" class="page-under-construction__link">Kontaktovat nás</a>
+    </div>
+  </div>
+</section>
